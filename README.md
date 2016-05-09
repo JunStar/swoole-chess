@@ -21,6 +21,18 @@ PHP+Swoole+Phalcon+Redis+Html5+Javascript实现的中国象棋在线对弈程序
 9.使用的浏览器访问项目地址，注意，浏览器需要支持Websocket通信,浏览器举例：IE9+,Firefox,Chrome等
 
 # PHP的Swoole扩展安装
+
 Swoole是一个PHP的网络通信框架，由C/C++编写成PHP扩展实现。
+
 安装步骤请访问：https://github.com/swoole/swoole-src
+
 Swoole详细介绍请访问：http://www.swoole.com/
+
+# PHP的Phalcon扩展安装
+
+Phalcon是一个PHP的编码框架，由C/C++编写成PHP扩展实现。
+
+安装步骤请访问：https://docs.phalconphp.com/zh/latest/reference/install.html
+
+详细介绍请访问：https://www.phalconphp.com/
+
