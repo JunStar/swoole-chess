@@ -56,3 +56,65 @@ make
 mv /opt/source/redis-3.0.7 /opt/
 ```
 `
+2.启动redis-server
+
+```
+`//进入redis-server安装目录
+cd /opt/redis-3.0.7
+//修改redis.conf，将daemonize的值设置为yes，这样redis-server在启动时，会以守护进程的方式在后台运行
+vim redis.conf
+//进入vim界面的操作步骤：
+//1.输入/daemonize回车找到daemonize所在行
+//2.按下i，进入编译模式，将daemonize的值修改为yes
+//3.按下ESC键，退出编辑模式
+//4.输入:wq回车，即保存退出了
+//5.对于vim不熟悉的朋友可以查下vim的使用方法
+//启动redis-server
+src/redis-server redis.conf
+```
+`
+3.关闭redis-server
+
+```
+`//1.如果你没有修改daemonize的值为yes，或者在启动时没有带redis.conf的参数，那么直接ctrl+c即可关闭redis-server
+//2.如果是以守护进程的方式运行的redis-server，则需要杀死redis-server的进程，过程如下：
+//查找redis-server进程，可以找到redis-server的进程ID
+ps -ef | grep redis-server
+//杀死redis-server进程
+sudo kill -9 redis-server进程ID
+```
+`
+# php的redis扩展安装
+
+github项目地址：https://github.com/phpredis/phpredis
+
+详细安装步骤：
+
+```
+`//各稳定版的phpredis源码包可以到pecl上下载，下载地址：
+http://pecl.php.net/package/redis
+//我下载的是2.2.7的stable版本,进入源码包文件夹
+cd /opt/source/
+//下载源码包
+wget http://pecl.php.net/get/redis-2.2.7.tgz
+//解压下载的redis-2.2.7.tgz
+tar xzf redis-2.2.7.tgz 
+//修改解压出来的目录名redis-2.2.7为phpredis-2.2.7，以便与redis-server区分 
+mv redis-2.2.7 phpredis-2.2.7
+//进入phpredis-2.2.7
+cd phpredis-2.2.7
+//开始php扩展的安装
+phpize
+./configure --with-php-config=php-config
+make && make install
+//执行完毕make install之后，成功的话会出现一个路径，请记录下此路径，我的路径是
+/opt/php5.6.19/lib/php/extensions/no-debug-zts-20131226/
+//修改php.ini，加上phpredis扩展的加载
+vim /etc/php.ini
+    //进入vim编辑模式
+    //1.修改extension\_dir的值，extension\_dir的值是在make install后记录的路径
+    extension\_dir = "/opt/php5.6.19/lib/php/extensions/no-debug-zts-20131226/"
+    //2.增加一行，加载phpredis扩展
+    extension = redis.so
+```
+`
