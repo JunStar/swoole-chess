@@ -40,7 +40,9 @@ Phalcon是一个PHP的编码框架，由C/C++编写成PHP扩展实现。
 
 1.安装redis-server
 ```
-`//进入本地源码包文件夹，平常会要使用的源码包有很多，定义一个文件夹来放置所有的源码包，用来存储所有的源码包，比如redis-server,phpredis等，没有此文件夹的话，可以创建一个
+`//进入本地源码包文件夹，平常会要使用的源码包有很多，
+//定义一个文件夹来放置所有的源码包，用来存储所有的源码包，
+//比如redis-server,phpredis等，没有此文件夹的话，可以创建一个
 cd /opt/source/
 //Redis-server官网下载地址：http://redis.io/download，选择下载最新的stable版本，我下载的是3.0.7
 wget http://download.redis.io/releases/redis-3.0.7.tar.gz
@@ -52,4 +54,5 @@ cd redis-3.0.7
 make
 //此处已经安装完毕，不需要执行make install，将安装后的文件夹移动到/opt/目录下
 mv /opt/source/redis-3.0.7 /opt/
-````
+```
+`
