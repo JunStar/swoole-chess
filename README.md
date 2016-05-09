@@ -10,16 +10,16 @@ PHP+Swoole+Phalcon+Redis+Html5+Javascript实现的中国象棋在线对弈程序
 7. 导入mysql文件
 8. 修改项目的配置文件
 9. 使用的浏览器访问项目地址，注意，浏览器需要支持Websocket通信,浏览器举例：IE9+,Firefox,Chrome等
-#PHP的Swoole扩展安装
+# PHP的Swoole扩展安装
 Swoole是一个PHP的网络通信框架，由C/C++编写成PHP扩展实现。
 安装步骤请访问：https://github.com/swoole/swoole-src
 Swoole详细介绍请访问：http://www.swoole.com/
-#PHP的Phalcon扩展安装
+# PHP的Phalcon扩展安装
 Phalcon是一个PHP的编码框架，由C/C++编写成PHP扩展实现。
 安装步骤请访问：https://docs.phalconphp.com/zh/latest/reference/install.html
 详细介绍请访问：https://www.phalconphp.com/
 # Redis-server安装、启动和关闭
-1. 安装redis-server
+1.安装redis-server
 ```
 `//进入本地源码包文件夹，平常会要使用的源码包有很多，定义一个文件夹来放置所有的源码包，用来存储所有的源码包，比如redis-server,phpredis等，没有此文件夹的话，可以创建一个
 cd /opt/source/
@@ -34,7 +34,7 @@ make
 //此处已经安装完毕，不需要执行make install，将安装后的文件夹移动到/opt/目录下
 mv /opt/source/redis-3.0.7 /opt/
 ```
-`2. 启动redis-server
+`2.启动redis-server
 ```
 `//进入redis-server安装目录
 cd /opt/redis-3.0.7
@@ -49,7 +49,7 @@ vim redis.conf
 //启动redis-server
 src/redis-server redis.conf
 ```
-`3. 关闭redis-server
+`3.关闭redis-server
 ```
 `//1.如果你没有修改daemonize的值为yes，或者在启动时没有带redis.conf的参数，那么直接ctrl+c即可关闭redis-server
 //2.如果是以守护进程的方式运行的redis-server，则需要杀死redis-server的进程，过程如下：
@@ -83,8 +83,8 @@ make && make install
 //修改php.ini，加上phpredis扩展的加载
 vim /etc/php.ini
     //进入vim编辑模式
-    //1.修改extension_dir的值，extension_dir的值是在make install后记录的路径
-    extension_dir = "/opt/php5.6.19/lib/php/extensions/no-debug-zts-20131226/"
+    //1.修改extension\_dir的值，extension\_dir的值是在make install后记录的路径
+    extension\_dir = "/opt/php5.6.19/lib/php/extensions/no-debug-zts-20131226/"
     //2.增加一行，加载phpredis扩展
     extension = redis.so
 ```
