@@ -118,3 +118,40 @@ vim /etc/php.ini
     extension = redis.so
 ```
 `
+# 开启Redis-server和Websocket服务
+
+开启redis-server的方法请查看redis-server的启动和关闭段落
+
+开启Websocket服务,假设现在的项目目录在/www/chess/目录下
+
+```
+`cd /www/chess/
+php cli.php Chesswebsocket
+```
+`
+# 导入mysql文件
+
+将文件chess.sql导入mysql中
+
+```
+`mysql -u root -p
+create database chess;
+use chess;
+source chess.sql的完整路径地址;
+```
+`
+# 需要修改的配置文件
+
+数据库配置文件:app/config/db.php
+
+redis配置文件:app/config/redis.php
+
+js文件中的websocket配置服务器地址配置，需要修改两个文件:
+
+public/js/datingwebsocket.js
+
+public/js/websocket.js
+
+# 使用浏览器访问项目地址
+
+http://localhost/chess/index.php
