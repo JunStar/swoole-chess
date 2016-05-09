@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>HTML5中国象棋游戏 - 本机对弈</title>
+<link href="<?php echo $this->url->getStatic('public/css/zzsc.css'); ?>" type="text/css" rel="stylesheet" />
+<link href="<?php echo $this->url->getStatic('public/css/button.css'); ?>" type="text/css" rel="stylesheet" />
+<script>
+var SITE_URL = "<?php echo 'http://'.$_SERVER['HTTP_HOST'] ?>";
+</script>
+</head>
+<body>
+<div class="box" id="box">
+	<div class="chess_left">
+		<canvas id="chess">对不起，您的浏览器不支持HTML5，请升级浏览器至IE9、firefox或者谷歌浏览器！</canvas>
+		<input type="button" class="button yellow larrow" value="创建对弈房间" onclick="location.href='<?php echo $this->url->get('play/create'); ?>'" />
+	</div>
+</div>
+<script src="<?php echo $this->url->getStatic('public/js/jquery-1.8.2.min.js'); ?>"></script>
+<script src="<?php echo $this->url->getStatic('public/js/index.js'); ?>"></script>
+<script>
+function createChessRoom( obj )
+{
+	$(obj).val('正在创建房间,请稍后...');
+	var post_url = "<?php echo $this->url->get('play/create'); ?>";
+	$.post(post_url, '', function(data){
+
+	});
+}
+</script>
+</body>
+</html>
