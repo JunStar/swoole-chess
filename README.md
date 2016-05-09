@@ -1,5 +1,9 @@
 # swoole-chess
+
 PHP+Swoole+Phalcon+Redis+Html5+Javascript实现的中国象棋在线对弈程序
+
+Demo地址:http://chess.phpby.com
+
 # 本地部署顺序
 
 1.检测PHP版本，PHP版本最高支持php5.6，这是由于Phalcon框架扩展目前只支持到php5.6的限制
