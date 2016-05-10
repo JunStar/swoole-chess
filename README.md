@@ -118,8 +118,8 @@ make && make install
 //修改php.ini，加上phpredis扩展的加载
 vim /etc/php.ini
     //进入vim编辑模式
-    //1.修改extension\_dir的值，extension\_dir的值是在make install后记录的路径
-    extension\_dir = "/opt/php5.6.19/lib/php/extensions/no-debug-zts-20131226/"
+    //1.修改extension_dir的值，extension_dir的值是在make install后记录的路径
+    extension_dir = "/opt/php5.6.19/lib/php/extensions/no-debug-zts-20131226/"
     //2.增加一行，加载phpredis扩展
     extension = redis.so
 ```
